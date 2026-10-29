@@ -1,0 +1,419 @@
+@import "tailwindcss";
+
+@theme {
+    --color-red-500: #e0173d;
+    --color-blue-400: #0b5fac;
+    --color-blue-500: #06103d;
+    --color-green-500: #00a651;
+    --color-yellow-500: #c4a26e;
+    --color-gray-500: #d9d9d9;
+    --color-gray-400: #f4f4f4;
+    --color-black-500: #202020;
+    --color-black-600: #181818;
+}
+
+.info-swiper {
+    --swiper-pagination-bullet-border-radius: 0px;
+    --swiper-pagination-bullet-inactive-color: rgba(255, 255, 255, 0.5);
+    --swiper-pagination-bullet-inactive-opacity: 1;
+    --swiper-theme-color: #ffffff;
+    padding-bottom: 30px;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@layer components {
+    /*  헤더  */
+    .header-wrapper {
+        @apply absolute top-0 left-0 z-999 w-full bg-linear-to-b from-black/80 to-transparent px-5 text-white md:px-10 2xl:px-20;
+
+        &:has(.gnb-list.is-active),
+        &.m-menu-open,
+        &.active {
+            @apply bg-blue-500 bg-none;
+        }
+
+        &:has(.gnb-list.is-active) {
+            @apply 2xl:h-114.25;
+        }
+
+        &.m-menu-open .gnb {
+            @apply block;
+        }
+    }
+
+    .gnb {
+        @apply absolute top-full left-0 hidden w-full bg-blue-500 px-6 pb-8 2xl:static 2xl:block 2xl:w-auto 2xl:bg-transparent 2xl:p-0;
+
+        .gnb-main-list {
+            @apply flex flex-col 2xl:flex-row 2xl:gap-20 2xl:font-medium;
+        }
+    }
+    .gnb-list {
+        @apply border-b border-white/20 last:border-b-0 2xl:relative 2xl:cursor-pointer 2xl:border-none;
+        .gnb-title {
+            @apply flex cursor-pointer items-center justify-between py-5 text-xl font-semibold 2xl:text-base;
+            .m-arrow,
+            & > svg {
+                @apply h-5 w-5 2xl:hidden;
+            }
+        }
+        .snb-list {
+            @apply hidden flex-col gap-5 pb-5 text-base font-medium;
+            @apply 2xl:absolute 2xl:top-full 2xl:left-1/2 2xl:w-max 2xl:-translate-x-1/2 2xl:gap-4.5 2xl:pt-20 2xl:pb-2.5 2xl:text-center;
+
+            li {
+                @apply cursor-pointer 2xl:opacity-50 2xl:hover:opacity-100;
+            }
+        }
+        &.is-open {
+            .m-arrow {
+                @apply rotate-180;
+            }
+            .snb-list {
+                @apply flex;
+            }
+        }
+        &.is-active {
+            .gnb-item {
+                @apply 2xl:text-yellow-500;
+            }
+            .snb-list {
+                @apply 2xl:flex;
+            }
+        }
+    }
+
+    .drop-down {
+        @apply relative flex items-center;
+        .drop-title {
+            @apply flex cursor-pointer items-center gap-2;
+        }
+        .drop-list {
+            @apply absolute top-10 left-1/2 hidden -translate-x-1/2 flex-col items-center justify-center gap-2 rounded-[20px] bg-white/50 p-5 text-blue-500 2xl:top-16;
+            .drop-item {
+                @apply flex w-max items-center gap-2;
+            }
+        }
+        &.active {
+            .arrow-icon {
+                @apply rotate-180;
+            }
+            .drop-list {
+                @apply flex;
+            }
+        }
+    }
+
+    /*    메인 배너    */
+    .main-banner {
+        @apply relative size-full;
+        .main-banner-prev,
+        .main-banner-next {
+            @apply pointer-events-auto cursor-pointer;
+            svg {
+                @apply size-10 stroke-1 xl:size-16;
+            }
+        }
+    }
+
+    /*  공연 일정   */
+    .info-card {
+        @apply relative mt-5 mr-15 flex flex-col gap-5;
+        &::before {
+            @apply absolute -top-3 left-0 block w-5 border-t-2 border-white content-[''];
+        }
+        &::after {
+            @apply absolute top-1/2 right-0 block h-16 w-px -translate-y-1/2 bg-white/10 content-[''];
+        }
+        &.is-last::after {
+            @apply hidden;
+        }
+        .info-title {
+            @apply mb-5 text-lg font-bold md:text-xl;
+        }
+        .info-link {
+            @apply text-yellow-500;
+        }
+    }
+
+    /*  프로젝트 아카이브  */
+    .archive-swiper {
+        .swiper-slide {
+            @apply opacity-50;
+        }
+        .swiper-slide-active {
+            @apply opacity-100;
+        }
+        .archive-card {
+            @apply max-w-250;
+        }
+    }
+    /*  네비게이션 버튼  */
+    .project-btn-prev,
+    .project-btn-next,
+    .sponsor-btn-prev,
+    .sponsor-btn-next {
+        @apply flex size-8.5 items-center justify-center hover:bg-blue-500 md:size-10;
+    }
+    .project-btn-prev.swiper-button-disabled,
+    .project-btn-next.swiper-button-disabled {
+        @apply pointer-events-none opacity-30;
+    }
+
+    /*  메인 -후원사  */
+    .sponsor-swiper {
+        @apply relative w-full overflow-hidden;
+        &::before {
+            @apply pointer-events-none absolute top-0 left-0 z-10 block h-full w-50 bg-linear-to-r from-white to-transparent content-[''];
+        }
+        &::after {
+            @apply pointer-events-none absolute top-0 right-0 z-10 block h-full w-50 bg-linear-to-l from-white to-transparent content-[''];
+        }
+    }
+
+    /*  단원  */
+    .unit-container {
+        @apply px-5 py-16 md:py-20 2xl:py-24;
+
+        .unit-wrapper {
+            @apply mx-auto max-w-400;
+            .unit-layer {
+                @apply grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4 2xl:grid-cols-5 2xl:gap-y-14;
+                img {
+                    @apply w-full object-cover;
+                }
+            }
+        }
+        .unit-text {
+            @apply leading-none font-bold text-blue-500;
+            &.title {
+                @apply mb-7 text-xl md:mb-10 md:text-2xl;
+            }
+        }
+        .name-box {
+            @apply mt-2.5 flex flex-wrap items-center gap-2 md:mt-5;
+            .name {
+                @apply text-base hover:underline md:text-xl;
+            }
+            .role {
+                @apply text-sm font-medium md:text-base;
+            }
+        }
+    }
+    /* 후원 프로그램 */
+    .sponsor-lead {
+        @apply relative w-fit px-6 py-4 text-center text-lg font-medium text-blue-500/50 md:p-6 md:text-2xl lg:px-10;
+        &::after,
+        &::before {
+            @apply absolute top-7 font-[Escoredream] text-5xl text-blue-500/10 md:text-[64px];
+        }
+        &::before {
+            @apply left-0 content-['“'];
+        }
+        &::after {
+            @apply right-0 content-['”'];
+        }
+    }
+
+    /*  테이블  */
+    .sponsor-tb {
+        @apply w-full border-y-2 border-black/80;
+        tr {
+            @apply divide-x divide-black/20 border-b border-black/20 text-sm lg:text-base 2xl:text-lg;
+        }
+        th,
+        td {
+            @apply p-2.5 xl:px-6 xl:py-5;
+        }
+        thead {
+            th {
+                @apply min-w-30 space-y-2 text-center xl:space-y-4;
+                span {
+                    @apply block whitespace-pre-wrap 2xl:text-xl;
+                    &:last-child {
+                        @apply font-medium text-yellow-500;
+                    }
+                }
+            }
+        }
+        tbody {
+            th {
+                @apply min-w-47 bg-gray-400 text-left font-medium break-keep;
+            }
+            td {
+                @apply text-center;
+                svg {
+                    @apply inline-block size-5 lg:size-8;
+                }
+            }
+        }
+    }
+    /* 힉엣눙크  */
+    .marquee-container {
+        @apply flex w-full items-center overflow-hidden;
+
+        &:hover .marquee-wrapper,
+        &.is-paused .marquee-wrapper {
+            animation-play-state: paused;
+        }
+
+        .marquee-wrapper {
+            @apply flex shrink-0 animate-[marquee_40s_linear_infinite] gap-5 pr-5;
+            img {
+                @apply aspect-283/400 w-51 cursor-pointer transition-transform duration-300 md:w-71;
+                &:hover,
+                &.is-active {
+                    @apply scale-90;
+                }
+            }
+        }
+    }
+
+    .hit-year-card {
+        @apply relative font-bold;
+        .hit-year {
+            @apply absolute top-0 left-0 -translate-y-2/3 text-2xl text-blue-500 md:text-[32px];
+        }
+        .hit-artist-card {
+            @apply relative flex flex-col gap-2 border-t-2 border-blue-500 bg-gray-400 py-8 pl-2;
+            img {
+                @apply absolute top-0 left-0 w-18 select-none md:w-30;
+            }
+            .hit-artist {
+                @apply flex flex-col text-right;
+                .hit-role {
+                    @apply text-sm font-medium text-yellow-500 md:text-lg;
+                }
+                .hit-name {
+                    @apply text-lg md:text-2xl;
+                }
+            }
+        }
+    }
+    /*    공지 사항    */
+    .notice-list {
+        @apply border-black-500/20 grid h-14 w-full cursor-pointer grid-cols-[1fr_7fr] items-center gap-5 border-t px-6 text-center text-sm md:h-19.25 md:grid-cols-[1fr_6fr_1.5fr] md:px-16 md:text-lg;
+        .post-date {
+            @apply hidden md:block;
+        }
+    }
+    /* 태그 */
+    .badge {
+        @apply border border-blue-500 px-2 py-0.5 text-sm md:px-3 md:py-1 md:text-lg;
+        &.bdg-important {
+            @apply bg-blue-500 text-white;
+        }
+        &.bdg-new {
+            @apply text-blue-500;
+        }
+    }
+    /* 필터링 */
+    .filter-box {
+        @apply relative flex gap-4 divide-black/50 after:absolute after:top-0 after:right-1/2 after:block after:h-4 after:w-px after:translate-y-1/3 after:bg-gray-300 after:content-[''];
+        .list-filter {
+            @apply text-black-500 text-sm opacity-50 md:text-lg;
+            &.active {
+                @apply font-bold opacity-100;
+            }
+        }
+    }
+
+    /*  페이지네이션  */
+    .page-btn {
+        @apply flex size-7 items-center justify-center md:size-10;
+        &.active {
+            @apply rounded-full bg-blue-500 text-white;
+        }
+    }
+
+    /* 첨부파일  */
+    .file-download {
+        @apply hidden items-center gap-1.5 md:flex;
+    }
+    .file-drop {
+        @apply border-black-600/20 flex w-full min-w-79 justify-between rounded-[10px] border bg-white p-3 shadow-[0_0_4px_rgba(0,0,0,0.1)] md:absolute md:right-0 md:bottom-0 md:z-50 md:w-fit md:translate-y-18 md:p-4;
+    }
+
+    /*  공통 shapes */
+    .btn-shape {
+        @apply inline-flex w-max items-center border px-4 py-2 text-sm font-bold md:px-8 md:text-base;
+    }
+
+    /*  서브 네비 & 서브 헤더 */
+    .sub-header {
+        @apply px-5 pt-16.5 2xl:pt-25;
+        .sub-header-wrapper {
+            @apply mx-auto flex max-w-400 flex-col items-center gap-10 pt-5 pb-10 md:gap-25 md:pb-20 lg:pt-10;
+            .sub-nav {
+                @apply flex w-full flex-wrap items-center gap-2 text-[13px] text-yellow-500 md:text-sm;
+            }
+            .sub-header-title {
+                @apply relative mt-5 text-2xl font-bold text-blue-500 md:text-[40px];
+
+                &::before {
+                    @apply absolute -top-5 left-1/2 size-1.5 -translate-x-1/2 rotate-45 bg-blue-500 content-[''] md:-top-8 md:size-2;
+                }
+            }
+            .sub-header-line {
+                @apply w-full text-blue-500;
+            }
+            .sub-back {
+                @apply size-6 self-start md:size-10;
+                > svg {
+                    @apply size-full stroke-1 text-black/50;
+                }
+            }
+        }
+    }
+
+    /* 공연 일정 */
+    .perform-container {
+        @apply flex flex-col gap-3 md:flex-row md:items-center md:gap-10;
+        .perform-date {
+            @apply flex flex-row gap-5 text-lg font-bold text-blue-500 md:flex-col md:gap-3 md:text-[32px];
+            .date-line {
+                @apply relative after:absolute after:top-1/2 after:right-0 after:block after:h-3 after:w-0.5 after:translate-x-3 after:-translate-y-1/2 after:bg-blue-500 after:content-[''];
+                @apply md:after:top-full md:after:right-1/2 md:after:h-0.5 md:after:w-5 md:after:translate-x-1/2 md:after:translate-y-1;
+            }
+        }
+        .perform-card {
+            @apply flex w-full gap-3 md:gap-8;
+            .poster {
+                @apply min-w-35 md:w-50;
+                img {
+                    @apply size-full object-contain;
+                }
+            }
+            .perform-info {
+                @apply flex flex-col justify-between gap-2;
+
+                .ticket-btn {
+                    @apply flex w-fit items-center gap-2 border px-3.5 py-2.5 text-sm font-medium lg:px-5 lg:text-xl;
+                }
+            }
+        }
+    }
+}
+
+@layer utilities {
+    /*  한글 본문 중앙 정렬  */
+    html[lang="ko"] .justify-ko {
+        @apply text-justify text-sm leading-[1.6] break-all md:text-lg;
+    }
+    .scroll-bar {
+        &::-webkit-scrollbar {
+            height: 6px;
+        }
+    }
+    .main-bold {
+        @apply text-2xl font-bold md:text-[32px];
+    }
+}

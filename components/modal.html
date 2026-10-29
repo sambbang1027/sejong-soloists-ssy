@@ -1,0 +1,15 @@
+<div id="global_modal" class="flex-center fixed inset-0 z-600 hidden size-full bg-black/50" role="dialog">
+    <div class="-xl z-800 w-[calc(100%-40px)] max-w-350 rounded-2xl bg-white px-10 pt-10 pb-30 shadow">
+        <div class="flex justify-end">
+            <button type="button" data-modal-close>
+                <i data-lucide="x"></i>
+            </button>
+        </div>
+
+        <div class="flex-center flex-col gap-8">
+            <p class="text-[22px] font-bold lg:text-[32px]" data-modal-title></p>
+
+            <div class="no-scrollbar max-h-100 w-full overflow-y-auto" data-modal-body></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="pagination flex-center gap-1 pb-14 text-sm md:gap-4 md:pb-30 md:text-base">
+    <a href="">
+        <i data-lucide="chevrons-left" class="h-5 w-5 md:h-6 md:w-6"></i>
+    </a>
+    <a href="">
+        <i data-lucide="chevron-left" class="h-5 w-5 md:h-6 md:w-6"></i>
+    </a>
+    <a href="?page=1" class="page-btn active">1</a>
+    <a href="?page=2" class="page-btn">2</a>
+    <a href="?page=3" class="page-btn">3</a>
+    <a href="?page=4" class="page-btn">4</a>
+    <a href="?page=5" class="page-btn">5</a>
+    <a href="">
+        <i data-lucide="chevron-right" class="h-5 w-5 md:h-6 md:w-6"></i>
+    </a>
+    <a href="">
+        <i data-lucide="chevrons-right" class="h-5 w-5 md:h-6 md:w-6"></i>
+    </a>
+</div>
+<script>
+    $(".page-btn").click(function (e) {
+        e.preventDefault();
+        $(".page-btn").removeClass("active");
+        $(this).addClass("active");
+    });
+</script>

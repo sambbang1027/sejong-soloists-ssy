@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=0"
+        />
+
+        <!-- SEO 시작 -->
+        <link href="/assets/images/favicon.ico" rel="icon" />
+        <link rel="canonical" href="https://www.sejongsolo.org" />
+        <meta name="robots" content="index,follow" />
+        <meta
+            name="subject"
+            content="미 CNN이 '세계 최고의 앙상블 중 하나'라고 극찬한 세종솔로이스츠 “One of the top ensembles of today” - CNN"
+        />
+        <meta name="title" content="SEJONG SOLOISTS | 세종솔로이스츠" />
+        <meta name="author" content="세종솔로이스츠" />
+        <meta
+            name="description"
+            content="미 CNN이 '세계 최고의 앙상블 중 하나'라고 극찬한 세종솔로이스츠 “One of the top ensembles of today” - CNN"
+        />
+        <meta
+            name="keywords"
+            content="실내악단, 현악 앙상블, 클래식 음악, Chamber Orchestra, Chamber music, Classical Music"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:rich_attachment" content="true" />
+        <meta property="og:site_name" content="SEJONG SOLOISTS | 세종솔로이스츠" />
+        <meta property="og:title" content="SEJONG SOLOISTS | 세종솔로이스츠" />
+        <meta
+            property="og:description"
+            content="미 CNN이 '세계 최고의 앙상블 중 하나'라고 극찬한 세종솔로이스츠 “One of the top ensembles of today” - CNN"
+        />
+        <meta property="og:image" content="/assets/images/thumbnail.jpg" />
+        <meta property="og:url" content="홈페이지 주소 입력" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="SEJONG SOLOISTS | 세종솔로이스츠" />
+        <meta
+            name="twitter:description"
+            content="미 CNN이 '세계 최고의 앙상블 중 하나'라고 극찬한 세종솔로이스츠 “One of the top ensembles of today” - CNN"
+        />
+        <meta name="twitter:image" content="/assets/images/thumbnail.jpg" />
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "SEJONG SOLOISTS | 세종솔로이스츠",
+                "description": "미 CNN이 '세계 최고의 앙상블 중 하나'라고 극찬한 세종솔로이스츠 “One of the top ensembles of today” - CNN",
+                "image": "https://example.com/assets/images/thumbnail.jpg"
+            }
+        </script>
+
+        <!-- SEO 끝 -->
+
+        <title>SEJONG SOLOISTS | 세종솔로이스츠</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <link rel="stylesheet" type="text/css" href="/css/common.css" />
+        <link rel="stylesheet" type="text/css" href="/src/output.css" />
+    </head>
+
+    <body>
+        <div id="wrap">
+            <header id="header"></header>
+
+            <!-- 내용 -->
+            <main>
+                <!--  서브 네비 & 서브 헤더 -->
+                <section class="sub-header">
+                    <div class="sub-header-wrapper">
+                        <div class="sub-nav">
+                            <a href="/"><i data-lucide="house" class="size-4 text-yellow-500"></i></a>
+                            <img src="/assets/images/icon/triangle.svg" class="w-1 object-contain" alt="다음" />
+                            <span>프로젝트</span>
+                            <img src="/assets/images/icon/triangle.svg" class="w-1 object-contain" alt="다음" />
+                            <a href="/pages/project/performance.html">공연일정</a>
+                        </div>
+
+                        <h2 class="sub-header-title">공연일정</h2>
+                        <hr class="sub-header-line" />
+                    </div>
+                </section>
+                <section class="px-5 pb-20">
+                    <div class="mx-auto flex max-w-400 flex-col gap-5 md:gap-16">
+                        <form action="" method="get" class="flex w-full flex-col gap-3 md:flex-row">
+                            <select
+                                name="perform-year"
+                                id="perform-year"
+                                class="w-full min-w-0 bg-gray-400 px-6 py-3 md:max-w-65"
+                            >
+                                <option value="2026" selected>2026</option>
+                            </select>
+                            <select
+                                name="performance-year"
+                                id="perform-year"
+                                class="w-full bg-gray-400 px-6 py-3 md:max-w-65"
+                            >
+                                <option value="all" selected>All Months</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <label for="perform-search" class="sr-only"></label>
+                            <input
+                                type="text"
+                                id="perform-search"
+                                name="perform-search"
+                                placeholder="Search"
+                                class="w-full bg-gray-400 px-6 py-3 md:max-w-65"
+                            />
+
+                            <div class="flex items-center justify-end gap-2">
+                                <button
+                                    type="submit"
+                                    class="btn-shape bg-blue-500 px-5 py-2 text-white hover:bg-transparent hover:text-blue-500 md:py-3"
+                                >
+                                    검색
+                                </button>
+                                <button class="btn-shape px-4 py-2 md:py-3" type="reset" aria-label="초기화">
+                                    <i data-lucide="rotate-ccw" class="size-4.5 stroke-2 md:size-6"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <h2 class="main-bold text-blue-500">2026년</h2>
+                        <div>
+                            <div class="perform-container">
+                                <div class="perform-date">
+                                    <span class="date-line">02</span>
+                                    <span>05</span>
+                                </div>
+                                <div class="perform-card">
+                                    <div class="poster">
+                                        <img
+                                            src="/assets/images/hic-et-nunc/2025-poster.png"
+                                            alt="힉엣눙크 뮤직 페스티벌 2026"
+                                        />
+                                    </div>
+                                    <div class="perform-info">
+                                        <div class="flex flex-col gap-1 md:gap-4">
+                                            <div
+                                                class="flex flex-wrap items-center gap-2 text-xs font-medium text-yellow-500 md:gap-5 md:text-xl"
+                                            >
+                                                <span>02. 05 (목) 07:30 PM</span>
+                                                <hr class="w-3 rotate-90 border-t-2 md:w-4" />
+                                                <span>Kosciuszko Foundation</span>
+                                            </div>
+                                            <h3 class="text-sm font-bold md:text-2xl">
+                                                Sejong Soloists Chamber Music Series Hostred by Chee-Yun
+                                            </h3>
+                                            <a href="#" class="flex items-center gap-2 text-sm md:gap-4 md:text-base">
+                                                <span>자세히 보기</span>
+                                                <i data-lucide="arrow-right" class="size-3.5 stroke-1 md:size-6"></i>
+                                            </a>
+                                        </div>
+                                        <div class="flex justify-start gap-2 md:justify-end">
+                                            <a
+                                                href="#"
+                                                class="ticket-btn hidden bg-red-500 text-white md:flex"
+                                                target="_blank"
+                                            >
+                                                <img
+                                                    src="/assets/images/icon/ticket/seoul_arts_center.svg"
+                                                    class="w-7 object-contain lg:w-8"
+                                                    alt="예술의전당"
+                                                />
+                                                <span>예술의전당</span>
+                                            </a>
+                                            <a
+                                                href="#"
+                                                class="ticket-btn hidden bg-blue-400 text-white md:flex"
+                                                target="_blank"
+                                            >
+                                                <img
+                                                    src="/assets/images/icon/ticket/nol.svg"
+                                                    class="w-8 object-contain lg:w-11"
+                                                    alt="NOL 티켓"
+                                                />
+                                                <span>티켓</span>
+                                            </a>
+                                            <a
+                                                href="#"
+                                                class="ticket-btn hidden bg-green-500 text-white md:flex"
+                                                target="_blank"
+                                            >
+                                                <img
+                                                    src="/assets/images/icon/ticket/naver.svg"
+                                                    class="size-3.5 object-contain lg:size-4.5"
+                                                    alt="네이버 예약"
+                                                />
+                                                <span>네이버 예약</span>
+                                            </a>
+                                            <a
+                                                href="#"
+                                                class="ticket-btn bg-blue-500 text-white hover:bg-transparent hover:text-blue-500"
+                                                target="_blank"
+                                            >
+                                                <span>티켓 구매</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer id="footer"></footer>
+        </div>
+
+        <!-- JS (lucide, i18next, swiper, gsap) -->
+        <script src="/js/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+
+        <script src="/js/script.js"></script>
+    </body>
+</html>

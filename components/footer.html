@@ -1,0 +1,173 @@
+<div class="w-full bg-blue-500 text-white">
+    <div class="mx-auto flex w-full max-w-400 flex-col px-4 py-12 md:px-10 md:py-16">
+        <div
+            class="flex w-full flex-col gap-6 border-b border-white pb-6 lg:flex-row lg:items-end lg:justify-between lg:py-10"
+        >
+            <!--  뉴스레터 구독  -->
+            <form action="" method="post" class="flex w-full max-w-148.5 flex-col gap-6">
+                <p class="text-xl font-bold lg:text-[32px]">Sign up for Newsletter</p>
+                <div class="flex gap-3">
+                    <label for="newsletter-email" class="sr-only">뉴스레터 이메일 입력</label>
+                    <input
+                        type="email"
+                        class="w-full bg-white/5 p-3 text-xs focus:outline-none md:text-base"
+                        id="newsletter-email"
+                        name="newsletter-email"
+                        placeholder="이메일을 입력해주세요."
+                        required
+                    />
+                    <button
+                        type="submit"
+                        class="btn-shape bg-white text-blue-500 hover:bg-transparent hover:text-white"
+                    >
+                        제출
+                    </button>
+                </div>
+            </form>
+            <!-- sns 이동 -->
+            <div class="flex gap-2">
+                <a
+                    href="https://www.instagram.com/sejong_soloists"
+                    class="flex-center h-9 w-9 rounded-full bg-white md:h-10 md:w-10"
+                    target="_blank"
+                >
+                    <img src="/assets/images/icon/instagram.png" class="h-8 w-8 object-contain" alt="인스타그램" />
+                </a>
+                <a
+                    href="https://www.facebook.com/thesejongsoloists"
+                    class="flex-center h-9 w-9 rounded-full bg-white md:h-10 md:w-10"
+                    target="_blank"
+                >
+                    <img src="/assets/images/icon/facebook.png" class="h-8 w-8 object-contain" alt="페이스북" />
+                </a>
+                <a
+                    href="https://www.youtube.com/@sejongsoloists1994"
+                    class="flex-center h-9 w-9 rounded-full bg-white md:h-10 md:w-10"
+                    target="_blank"
+                >
+                    <img src="/assets/images/icon/youtube.png" class="h-8 w-8 object-contain" alt="유튜브" />
+                </a>
+                <a
+                    href="https://blog.naver.com/sejong_soloists"
+                    class="flex-center h-9 w-9 rounded-full bg-white md:h-10 md:w-10"
+                    target="_blank"
+                >
+                    <img src="/assets/images/icon/naver_blog.png" class="h-8 w-8 object-contain" alt="네이버 블로그" />
+                </a>
+                <a
+                    href="https://www.nts.go.kr/"
+                    class="flex-center h-9 w-9 rounded-full bg-white md:h-10 md:w-10"
+                    target="_blank"
+                >
+                    <img src="/assets/images/icon/national_tax.png" class="h-8 w-8 object-contain" alt="국세청" />
+                </a>
+            </div>
+        </div>
+        <div class="flex flex-col gap-10 py-7 text-sm md:text-base lg:flex-row lg:justify-between lg:gap-14">
+            <div class="flex flex-row gap-10 lg:flex-col">
+                <img
+                    src="/assets/images/f_logo.png"
+                    class="h-22.5 w-22.5 md:h-34.75 md:w-34.75"
+                    alt="세종 솔로이스츠 로고"
+                />
+
+                <div class="flex flex-col gap-5 font-light">
+                    <div class="flex flex-col gap-2">
+                        <span class="font-bold">서울</span>
+                        <address class="not-italic">
+                            (04533) 서울특별시 중구 남대문로7길 16, 4층 408호 (소공동, 소공 한국빌딩)
+                        </address>
+                        <a href="mailto:info@sejongsolo.org" class="hover:underline">info@sejongsolo.org</a>
+                        <span>Tel. 02-584-5494</span>
+                    </div>
+                    <div class="flex flex-col gap-3">
+                        <span class="font-bold">뉴욕</span>
+                        <address class="not-italic">119 West 72nd Street, Suite 183, New York, NY 10023 USA</address>
+                        <a href="mailto:sejong@sejongsolo.org" class="hover:underline">sejong@sejongsolo.org</a>
+                        <span>Tel. +1-212-689-1731</span>
+                    </div>
+                </div>
+            </div>
+            <!--  네비게이션  -->
+            <nav>
+                <ul class="grid grid-cols-2 gap-7 font-light md:grid-cols-3">
+                    <li class="flex flex-col gap-2 text-sm md:text-base">
+                        <span class="font-bold md:text-xl">세종솔로이스츠</span>
+                        <ul class="flex flex-col gap-1">
+                            <li><a href="/pages/soloists/about.html">세종솔로이스츠 소개</a></li>
+                            <li><a href="#">미션 & 연혁</a></li>
+                            <li><a href="#">Founding Artistic Director</a></li>
+                            <li><a href="#">총감독</a></li>
+                            <li><a href="/pages/soloists/unit.html">단원</a></li>
+                            <li><a href="#">리더십</a></li>
+                        </ul>
+                    </li>
+                    <li class="flex flex-col gap-2 text-sm md:text-base">
+                        <span class="font-bold md:text-xl">프로젝트</span>
+                        <ul class="flex flex-col gap-1">
+                            <li><a href="/pages/project/performance.html">공연 일정</a></li>
+                            <li><a href="/pages/project/hic-et-nunc.html">힉엣눙크! 뮤직 페스티벌</a></li>
+                            <li><a href="#">세종솔로이스츠 영 아티스트 프로그램</a></li>
+                            <li><a href="#">음반</a></li>
+                            <li><a href="#">위촉곡</a></li>
+                        </ul>
+                    </li>
+                    <li class="flex flex-col gap-2 text-sm md:text-base">
+                        <span class="font-bold md:text-xl">미디어</span>
+                        <ul class="flex flex-col gap-1">
+                            <li><a href="#">세계언론이 주목한 세종솔로이스츠</a></li>
+                            <li><a href="#">언론보도</a></li>
+                            <li><a href="#">[e-세종] 뉴스레터</a></li>
+                            <li><a href="#">프로젝트 아카이브</a></li>
+                        </ul>
+                    </li>
+                    <li class="flex flex-col gap-2 text-sm md:text-base">
+                        <span class="font-bold md:text-xl">후원 / 멤버십</span>
+                        <ul class="flex flex-col gap-1">
+                            <li><a href="/pages/sponsorship/sponsorship.html">후원프로그램</a></li>
+                            <li><a href="#">코너스톤 소사이어티</a></li>
+                            <li><a href="#">연간 후원 리스트</a></li>
+                            <li><a href="#">재능기부 신청</a></li>
+                        </ul>
+                    </li>
+                    <li class="flex flex-col gap-2 text-sm md:text-base">
+                        <span class="font-bold md:text-xl">더보기</span>
+                        <ul class="flex flex-col gap-1">
+                            <li><a href="/pages/notice.html">공지사항</a></li>
+                            <li><a href="#">연간 기부금 모금액 내역</a></li>
+                            <li><a href="#">공익법인 결산서류 등의 공시 의무</a></li>
+                            <li><a href="#">운영 자료실</a></li>
+                            <li><a href="/pages/contact.html">문의하기</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="flex flex-col items-start gap-5 md:gap-10 lg:flex-row lg:justify-between">
+            <button
+                type="button"
+                class="text-sm font-bold md:text-base"
+                data-modal-open
+                data-modal-title="개인정보 이용 동의"
+                data-modal-target="#privacy-template"
+            >
+                개인정보 이용 동의
+            </button>
+            <span class="self-center text-sm opacity-50">Copyright 2025 Cormo All rights reserved.</span>
+        </div>
+    </div>
+</div>
+
+<template id="privacy-template">
+    <!-- prettier-ignore -->
+    <p class="text-base whitespace-pre-line lg:text-[18px]">
+        세종솔로이스츠는 귀하의 개인정보를 중요하게 여기며, ⌈개인정보 보호법⌋ 및 ⌈정보통신망 이용촉진 및 정보보호 등에 관한 법률⌋에 따라 관련 법령을 준수하여 개인정보를 안전하게 처리하고 있습니다.
+        당사는 다음과 같은 목적으로 개인정보를 수집·이용합니다.
+
+        <span class="font-bold">수집 항목:</span> 성명, 전화번호, 이메일
+        <span class="font-bold">수집·이용 목적:</span> 홈페이지 문의하기 기능을 통한 문의 응대
+        <span class="font-bold">보유 및 이용 기간:</span> 수집일로부터 3년 (동이 철회 시 지체 없이 파기)
+        
+        *귀하는 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다. 다만, 동의를 거부할 경우 홈페이지 문의하기 기능 이용이 제한될 수 있습니다.
+    </p>
+</template>
